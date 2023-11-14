@@ -1,17 +1,25 @@
 package org.example;
 
+import org.example.exceptions.ElementNotFoundException;
 import org.example.exceptions.IndexNotFoundException;
 import org.example.exceptions.ParamNullException;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class StringListImp implements StringList {
     private static final int CAPACITY = 10;
     private int size = 0;
-    private final String[] arrayString;
+    private String[] arrayString;
 
     public StringListImp() {
         this.arrayString = new String[CAPACITY];
+    }
+
+    public StringListImp(String[] arrayString) {
+        this.arrayString = Arrays.copyOf(arrayString, arrayString.length);
+        this.size = arrayString.length;
     }
 
     @Override
@@ -25,74 +33,104 @@ public class StringListImp implements StringList {
     @Override
     public String add(int index, String item) {
         validateElement(item);
+        validateIndex(index);
         resizeArray();
-        System.arraycopy(arrayString, index, arrayString, index + 1, arrayString.length - index - 1);
-        return null;
+        System.arraycopy(arrayString, index, arrayString, index + 1, size - index);
+        arrayString[index] = item;
+        size++;
+        return item;
     }
 
     @Override
     public String set(int index, String item) {
-        return null;
+        validateIndex(index);
+        validateElement(item);
+        arrayString[index] =  item;
+        return item;
     }
 
     @Override
     public String remove(String item) {
-        return null;
+        validateElement(item);
+        int index = indexOf(item);
+        if (index < 0) {
+            throw new ElementNotFoundException(
+                    String.format(ElementNotFoundException.TEMPLATE_MESSAGE, item));
+        }
+        return remove(index);
     }
 
     @Override
     public String remove(int index) {
-        return null;
+        validateIndex(index);
+        String item = arrayString[index];
+        System.arraycopy(arrayString, index + 1, arrayString, index, size - index - 1);
+        arrayString[size - 1] = null;
+        size--;
+        return item;
     }
 
     @Override
     public boolean contains(String item) {
-        return false;
+        validateElement(item);
+        return indexOf(item) >= 0;
     }
 
     @Override
     public int indexOf(String item) {
-        return 0;
+        validateElement(item);
+        return IntStream.range(0, size)
+                .filter(e -> arrayString[e].equals(item))
+                .findFirst()
+                .orElse(-1);
     }
 
     @Override
     public int lastIndexOf(String item) {
-        return 0;
+        validateElement(item);
+        return IntStream.range(0, size)
+                .map(e -> size - 1 - e)
+                .filter(e -> arrayString[e].equals(item))
+                .findFirst()
+                .orElse(-1);
     }
 
     @Override
     public String get(int index) {
-        return null;
+        validateIndex(index);
+        return arrayString[index];
     }
 
     @Override
     public boolean equals(StringList otherList) {
-        return false;
+        validateElement(otherList);
+        return Arrays.equals(this.toArray(), otherList.toArray());
     }
 
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return size == 0;
     }
 
     @Override
     public void clear() {
-
+        this.arrayString = new String[CAPACITY];
+        size = 0;
     }
 
     @Override
     public String[] toArray() {
-        return new String[0];
+        return Arrays.copyOf(arrayString, size);
     }
 
     private void resizeArray() {
         if (size >= arrayString.length) {
-            Arrays.copyOf(arrayString, arrayString.length + CAPACITY);
+            arrayString = Arrays.copyOf(arrayString, arrayString.length + CAPACITY);
         }
     }
 
@@ -102,7 +140,7 @@ public class StringListImp implements StringList {
         }
     }
 
-    private void validateElement(String item) {
+    private void validateElement(Object item) {
         if (item == null) {
             throw new ParamNullException();
         }
