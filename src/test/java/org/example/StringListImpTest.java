@@ -95,4 +95,11 @@ class StringListImpTest {
         StringListImp listImp = new StringListImp(ARRAY_STRING);
         assertThrows(IndexNotFoundException.class, () -> listImp.add(INDEX_NOT, BETWEEN));
     }
+
+    @Test
+    public void whenRemoveLastIndex() {
+        StringListImp listImp = new StringListImp(ARRAY_STRING);
+        listImp.remove(INDEX_LAST);
+        assertArrayEquals(ARRAY_STRING_AFTER_REMOVE_LAST_INDEX, listImp.toArray());
+    }
 }

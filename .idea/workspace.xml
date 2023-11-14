@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3438e045-2e40-4cc0-b83a-c79ff9ce3028" name="Changes" comment="Инициализация ДЗ № 2.14">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ConstantsForTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/StringListImpTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/StringListImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/StringListImp.java" afterDir="false" />
+    <list default="true" id="3438e045-2e40-4cc0-b83a-c79ff9ce3028" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ConstantsForTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ConstantsForTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/StringListImpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/StringListImpTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +66,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StringListImpTest.whenInsertElementThenException">
+  <component name="RunManager" selected="JUnit.StringListImpTest.whenRemoveLastIndex">
     <configuration name="StringListImpTest.whenAddNullThenException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Homework_2_14" />
       <extension name="coverage">
@@ -80,22 +78,6 @@
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.StringListImpTest" />
       <option name="METHOD_NAME" value="whenAddNullThenException" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StringListImpTest.whenGetForIndexThenElement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Homework_2_14" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.StringListImpTest" />
-      <option name="METHOD_NAME" value="whenGetForIndexThenElement" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -149,13 +131,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StringListImpTest.whenRemoveLastIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Homework_2_14" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.StringListImpTest" />
+      <option name="METHOD_NAME" value="whenRemoveLastIndex" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StringListImpTest.whenRemoveLastIndex" />
         <item itemvalue="JUnit.StringListImpTest.whenInsertElementThenException" />
         <item itemvalue="JUnit.StringListImpTest.whenAddNullThenException" />
         <item itemvalue="JUnit.StringListImpTest.whenRemoveForNameThenElement" />
         <item itemvalue="JUnit.StringListImpTest.whenRemoveForIndexThenElement" />
-        <item itemvalue="JUnit.StringListImpTest.whenGetForIndexThenElement" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +169,7 @@
       <workItem from="1699932871712" duration="11000" />
       <workItem from="1699947086464" duration="5395000" />
       <workItem from="1699965819188" duration="5399000" />
-      <workItem from="1699978023131" duration="1529000" />
+      <workItem from="1699978023131" duration="2491000" />
     </task>
     <task id="LOCAL-00001" summary="Инициализация ДЗ № 2.14">
       <option name="closed" value="true" />
@@ -181,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699900060058</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Решение ДЗ № 2.14">
+      <created>1699979749430</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699979749430</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +194,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Инициализация ДЗ № 2.14" />
-    <option name="LAST_COMMIT_MESSAGE" value="Инициализация ДЗ № 2.14" />
+    <MESSAGE value="Решение ДЗ № 2.14" />
+    <option name="LAST_COMMIT_MESSAGE" value="Решение ДЗ № 2.14" />
   </component>
 </project>

@@ -29,7 +29,14 @@ public class ConstantsForTest {
         TWO,
         THREE,
         FOUR,
-        FIVE,
+        FIVE
+    };
+
+    public static final String[] ARRAY_STRING_AFTER_REMOVE_LAST_INDEX = new String[] {
+            ONE,
+            TWO,
+            THREE,
+            FOUR,
     };
 
     public static final String[] ARRAY_STRING_WITH_BETWEEN_ELEMENT = new String[] {
